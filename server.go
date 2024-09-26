@@ -36,7 +36,7 @@ func main() {
 
 	port := ":8080"
 
-	log.Printf("Server running on port %s", port)
+	log.Printf("Server listening on port %s", port)
 	log.Fatal(http.ListenAndServe(port, router))
 }
 
@@ -104,5 +104,13 @@ func updateUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello, World!")
+	i := 0
+	for i < 1000 {
+		fmt.Fprint(w, "Hello, World! ")
+		fmt.Fprint(w, "Big boy. ")
+		// fmt.Println("Hello, World! ")
+		// fmt.Println("Big boy. ")
+
+		i += 1
+	}
 }
